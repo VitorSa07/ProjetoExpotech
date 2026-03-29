@@ -20,13 +20,13 @@ def cadastro():
         conexao = mysql.connector.connect(
             host='localhost',
             user='root',
-            password='expotech2026',
+            password='guriSQL_',
             database='expotech'
         )
         
         cursor = conexao.cursor()
         
-        cursor.execute('SELECT * FROM usuarios WHERE email = %s', (email,))
+        cursor.execute('SELECT * FROM usuarios WHERE email_usuario = %s', (email,))
         existe = cursor.fetchone()
         
         if existe:
@@ -35,7 +35,7 @@ def cadastro():
             return 'Usuário já cadastrado!'
         
         cursor.execute(
-            'INSERT INTO usuarios (usuario, email, senha) VALUES (%s, %s, %s)',
+            'INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario) VALUES (%s, %s, %s)',
             (usuario, email, senha)
         )
         conexao.commit()
