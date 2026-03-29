@@ -1,0 +1,51 @@
+from flask import Flask, request, render_template
+import mysql.connector
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('cadastro.html')
+
+@app.route('/cadastro', methods=['POST'])
+def cadastro():
+    try:
+        usuario = request.form['usuario']
+        email = request.form['cremail']
+        senha = request.form['crsenha']
+        
+        if not usuario or not email or not senha:
+            return 'Todos os campos são obrigatórios!'
+        
+        conexao = mysql.connector.connect(
+            host='localhost',
+            user='root',
+            password='expotech2026',
+            database='expotech'
+        )
+        
+        cursor = conexao.cursor()
+        
+        cursor.execute('SELECT * FROM usuarios WHERE email = %s', (email,))
+        existe = cursor.fetchone()
+        
+        if existe:
+            cursor.close()
+            conexao.close()
+            return 'Usuário já cadastrado!'
+        
+        cursor.execute(
+            'INSERT INTO usuarios (usuario, email, senha) VALUES (%s, %s, %s)',
+            (usuario, email, senha)
+        )
+        conexao.commit()
+        cursor.close()
+        conexao.close()
+        
+        return 'Cadastro realizado com sucesso!'
+    
+    except Exception as e:
+        return f'Erro ao cadastrar: {str(e)}'
+
+if __name__ == '__main__':
+    app.run(debug=True)
