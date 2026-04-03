@@ -1,8 +1,8 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, url_for, redirect, session
 import mysql.connector
 
 app = Flask(__name__)
-
+app.secret_key = '0'
 @app.route('/')
 def home():
     return render_template('cadastro.html')
@@ -41,11 +41,16 @@ def cadastro():
         conexao.commit()
         cursor.close()
         conexao.close()
-        
-        return 'Cadastro realizado com sucesso!'
-    
+        session['usuario']= usuario
+        return redirect(url_for('main'))
     except Exception as e:
         return f'Erro ao cadastrar: {str(e)}'
+
+@app.route('/main')
+def main():
+    usuario= session.get('usuario')
+    return render_template('main.html', usuario=usuario)
+      
 
 if __name__ == '__main__':
     app.run(debug=True)
