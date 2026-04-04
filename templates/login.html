@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <h1> Ola, seja bem-vindo(a). Faça login para continuar</h1>
+    <link rel="stylesheet" href="estilo_login.css">
 </head>
-<body style="background-color: rgb(245, 230 , 211); color: rgb(0, 0, 0);">
-    
+<body>
+
     <form action="login" method="post">
+        <img class="img_login" src="ChatGPT Image 27 de mar. de 2026, 20_51_06.png" alt="">    
         <p>
-            <label for= "email"> Digite seu Email:</label><br>
-            <input type="email" name="email" id="email" placeholder="digite seu email"> 
+            <label for= "email"></label><br>
+            <input class="texto_caixa" type="email" name="email" id="email" placeholder="Email"> 
         </p>
         <p>
-            <label for= "senha"> Digite sua senha:</label><br>
-            <input type="password" name="senha" id="senha" placeholder="digite sua senha">
+            <label for= "senha"></label><br>
+            <input class="texto_caixa" type="password" name="senha" id="senha" placeholder="Senha">
         </p>
     
-    <p> <input type="button" value="Login"> 
-        <a href="cadastro.html"> cadastrar-se</a><br>
-    </p>
+    <p> <input class="mds" type="button" value="Login"> </p>
     </form>
+    <a class="cadastro" href="Cadastro_site/cadastro.html"> cadastrar-se</a><br>
+
+    <div class="decoracao_lado">
+        <img class="img_logo" src="ChatGPT_Image_27_de_mar._de_2026__20_42_32-removebg-preview.png" alt="">
+    </div> 
     
 </body>
 </html>

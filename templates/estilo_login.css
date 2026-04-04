@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.login-box {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* INPUTS */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 12%;
+    margin-top: 15%;
+}
+
+
+/* LADO DIREITO */
+.decoracao_lado {
+    width: 70%; /* ou 60% se quiser maior */
+    height: 100vh; /* MUITO IMPORTANTE */
+
+    background-color: #3f4e6b;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+    align-items: center;
+    margin-left: 40%;
+    margin-top: -1000px;
+    padding: 39%;
+}
+
+.mds{
+    width: 180px;
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid #39496A;
+    margin-left: 30px;
+    color: #ffffff;
+    background-color: #39496A;
+}
+
+.mds:hover{
+    background-color: #4969a9;
+}
+
+.texto_caixa{
+    width: 250px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #39496A;
+    outline: none;
+    text-align: -15px;
+    padding-top: 25px;
+    margin-top: -15px;
+}
+
+.img_logo {
+    width: 1000px;
+    height: 1000px;
+    margin-top: 40px;
+    margin-left: -300px;
+}
+
+.cadastro{
+    margin-left: 16%;
+    color: black;
+    text-decoration: none;
+}
+
+.img_login{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    margin-left: 3%;
+    align-items: center;
+}

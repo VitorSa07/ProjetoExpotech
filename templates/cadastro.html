@@ -3,32 +3,39 @@
  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilo_cadastro.css">
     <title>cadastro</title>
-    <h2>Ola, cadastre-se gratuitamente para utilizar nossos serviços!</h2>
  </head>
- <body>
-    <form action="/cadastro" method="POST">
-        <p>
-            <label for=" usuario"> Digite seu nome:</label><br>     
-            <input type=" text" name="usuario" id="usuario" placeholder="digite seu usuario" required>
-        </p>
-        <p>
-            <label for= "email" > Digite seu Email:</label><br>
-            <input type="email" name="cremail" id="email" placeholder="digite seu email" required> 
-        </p>
-        <p>
-            <label for= "senha"> Digite sua senha:</label><br>
-            <input type="password" name="crsenha" id="senha" placeholder="digite sua senha" required>
-        </p>
+    <body>
+        <form action="cadastrar" method="post">
+           <p>
+               <label  for=" usuario"></label><br>     
+               <input class="texto_caixa" type=" text" name="usuario" id="usuario" placeholder="Usuario">
+           </p>
+           <p>
+              <label  for= "email" ></label><br>
+               <input class="texto_caixa" type="email" name="cremail" id="email" placeholder="Email"> 
+           </p>
+           <p>
+                <label  for= "senha"></label><br>
+               <input class="texto_caixa" type="password" name="crsenha" id="senha" placeholder="Senha">
+            </p>
     
-        <p> <a href="main.html">
-        <button type="submit"> cadastrar-se </button> 
-        </a>
+       <p> 
+         <a href="#">
+         <input class="mds" type="button" value="Login"> 
+         </a>
+        </p> 
+
+         <div>
+            
+        <div class="decoracao_lado">
+            <img class="img_logo" src="ChatGPT_Image_27_de_mar._de_2026__20_42_32-removebg-preview.png" alt="">
+        </div> 
         
       
-     
- </body>
+    
+    </body>
  </html>
  
  
