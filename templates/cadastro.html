@@ -3,11 +3,11 @@
  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo_cadastro.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='estilo_cadastro.css')}}">
     <title>cadastro</title>
  </head>
     <body>
-        <form action="cadastrar" method="post">
+        <form action="/cadastro" method="POST">
            <p>
                <label  for=" usuario"></label><br>     
                <input class="texto_caixa" type=" text" name="usuario" id="usuario" placeholder="Usuario">
@@ -22,16 +22,15 @@
             </p>
     
        <p> 
-         <a href="#">
-         <input class="mds" type="button" value="Login"> 
-         </a>
+         <input class="mds" type="submit" value="Login">
         </p> 
 
          <div>
             
         <div class="decoracao_lado">
-            <img class="img_logo" src="ChatGPT_Image_27_de_mar._de_2026__20_42_32-removebg-preview.png" alt="">
+            <img class="img_logo" src="{{ url_for('static', filename='img/ImagemLogo')}}" alt="">
         </div> 
+        </form>
         
       
     

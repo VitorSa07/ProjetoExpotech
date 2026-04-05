@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="estilo_login.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='estilo_login.css')}}">
 </head>
 <body>
-
-    <form action="login" method="post">
-        <img class="img_login" src="ChatGPT Image 27 de mar. de 2026, 20_51_06.png" alt="">    
+    {% if erro %}
+        <div style="background-color: #ff4d4d; padding: 10px; border-radius: 8px; color: white; margin-bottom: 10px;">
+        {{ erro }}
+    </div>
+    {% endif %}
+    <form action="/login" method="POST">
+        <img class="img_login" src="{{ url_for('static', filename='img/ImagemUse.png')}}" alt="">    
         <p>
             <label for= "email"></label><br>
             <input class="texto_caixa" type="email" name="email" id="email" placeholder="Email"> 
@@ -19,13 +23,14 @@
             <input class="texto_caixa" type="password" name="senha" id="senha" placeholder="Senha">
         </p>
     
-    <p> <input class="mds" type="button" value="Login"> </p>
+    <p> <input class="mds" type="submit" value="Login"> </p>
     </form>
-    <a class="cadastro" href="Cadastro_site/cadastro.html"> cadastrar-se</a><br>
+    <a class="cadastro" href="{{url_for('cadastro')}}"> cadastrar-se</a><br>
 
     <div class="decoracao_lado">
-        <img class="img_logo" src="ChatGPT_Image_27_de_mar._de_2026__20_42_32-removebg-preview.png" alt="">
+        <img class="img_logo" src="{{url_for('static', filename= 'img/imagemLogo.png')}}" alt="">
     </div> 
+    </form>
     
 </body>
 </html>
